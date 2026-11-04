@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- PaNIC Studio mark: oxblood tile, cream film frame with sprocket holes, brass play and spark (PaNIC family) -->
+  <rect width="64" height="64" rx="15" fill="#781923"/>
+  <rect x="13" y="18" width="38" height="28" rx="4" fill="none" stroke="#f6e6bf" stroke-width="2.6"/>
+  <g fill="#f6e6bf"><rect x="17" y="21" width="3.4" height="2.6" rx=".8"/><rect x="24" y="21" width="3.4" height="2.6" rx=".8"/><rect x="31" y="21" width="3.4" height="2.6" rx=".8"/><rect x="38" y="21" width="3.4" height="2.6" rx=".8"/><rect x="45" y="21" width="3.4" height="2.6" rx=".8"/>
+  <rect x="17" y="40.4" width="3.4" height="2.6" rx=".8"/><rect x="24" y="40.4" width="3.4" height="2.6" rx=".8"/><rect x="31" y="40.4" width="3.4" height="2.6" rx=".8"/><rect x="38" y="40.4" width="3.4" height="2.6" rx=".8"/><rect x="45" y="40.4" width="3.4" height="2.6" rx=".8"/></g>
+  <path d="M28.5 27.2v9.6a.9.9 0 0 0 1.37.77l7.7-4.8a.9.9 0 0 0 0-1.54l-7.7-4.8a.9.9 0 0 0-1.37.77z" fill="#c5a466"/>
+  <path d="m50 7 1.6 3.9 3.9 1.6-3.9 1.6L50 18l-1.6-3.9-3.9-1.6 3.9-1.6Z" fill="#c5a466"/>
+</svg>

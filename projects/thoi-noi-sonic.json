@@ -1,0 +1,96 @@
+{
+  "app": "panic-slide",
+  "version": 1,
+  "name": "Thôi nôi SoNIC · 02.12.2026",
+  "opts": {
+    "style": "birthday",
+    "aspect": "landscape",
+    "collage": true,
+    "dur": 5,
+    "fitMusic": true,
+    "frame": "mix",
+    "filter": "pastel",
+    "transitions": [
+      14,
+      9,
+      1,
+      5,
+      6,
+      2,
+      13,
+      0
+    ],
+    "particles": [
+      "balloons",
+      "sparkles",
+      "confetti"
+    ],
+    "particleMode": "accent",
+    "density": 1,
+    "showCaptions": true,
+    "lyricMode": "sticker",
+    "title": "SoNIC",
+    "sub": "THÁI THANH TÙNG · TRÒN 1 TUỔI",
+    "end": "Cảm ơn cả nhà đã đến chung vui cùng SoNIC 💙",
+    "sort": "date"
+  },
+  "captions": {
+    "birthday": [
+      {
+        "top": "Hello",
+        "bottom": "SoNIC!",
+        "on": true,
+        "custom": true
+      },
+      {
+        "top": "Little",
+        "bottom": "NIC",
+        "on": true,
+        "custom": true
+      },
+      {
+        "top": "One year",
+        "bottom": "of love",
+        "on": true
+      },
+      {
+        "top": "Tròn",
+        "bottom": "1 tuổi",
+        "on": true
+      },
+      {
+        "top": "Con là",
+        "bottom": "niềm vui",
+        "on": true
+      },
+      {
+        "top": "Thôi nôi",
+        "bottom": "02.12.2026",
+        "on": true,
+        "custom": true
+      },
+      {
+        "top": "Mau lớn",
+        "bottom": "nhé NIC",
+        "on": true,
+        "custom": true
+      },
+      {
+        "top": "Little",
+        "bottom": "prince",
+        "on": true
+      },
+      {
+        "top": "Nụ cười",
+        "bottom": "của bố mẹ",
+        "on": true
+      },
+      {
+        "top": "Happy",
+        "bottom": "1st birthday",
+        "on": true,
+        "custom": true
+      }
+    ]
+  }
+}

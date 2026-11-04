@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PaNIC Slide Studio — Slideshow ảnh có hiệu ứng</title>
+<meta name="description" content="Tạo slideshow ảnh cưới, sinh nhật, kỷ niệm với chuyển cảnh điện ảnh, slide ghép ảnh, nhạc nền và phụ đề karaoke. Xuất video MP4 ngay trên trình duyệt, ảnh không rời khỏi máy bạn.">
+<meta name="theme-color" content="#efefe9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<!-- Link previews (Facebook, Zalo, Messenger, X). og:image must be an absolute URL: change the domain if you deploy elsewhere. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PaNIC Slide Studio">
+<meta property="og:title" content="PaNIC Slide Studio — Slideshow ảnh có hiệu ứng">
+<meta property="og:description" content="Ảnh cưới, sinh nhật, kỷ niệm thành video điện ảnh: chuyển cảnh, slide ghép ảnh, nhạc và phụ đề karaoke. Xuất MP4 ngay trên trình duyệt.">
+<meta property="og:url" content="https://panic-slide-studio.vercel.app/">
+<meta property="og:image" content="https://panic-slide-studio.vercel.app/assets/img/og-cover.png?v=3">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://panic-slide-studio.vercel.app/assets/img/og-cover.png?v=3">
+<script>try { const t = localStorage.getItem('panic-slide:theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = t; } catch {}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/app.css?v=5">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.2v13.6a1 1 0 0 0 1.5.86l11-6.8a1 1 0 0 0 0-1.72l-11-6.8A1 1 0 0 0 8 5.2z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4.5" width="4" height="15" rx="1.2" fill="currentColor" stroke="none"/><rect x="14" y="4.5" width="4" height="15" rx="1.2" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-restart" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-max" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z"/><path d="M19 15l.8 2.2 2.2.8-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+  <symbol id="i-type" viewBox="0 0 24 24"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-captions" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 15h4M14 15h3M7 11h2M12 11h5"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M5 20h14"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-4"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2.5" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h11l5 5v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M7 3v5h8M7 21v-7h10v7"/></symbol>
+  <symbol id="i-chev-l" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-chev-r" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></symbol>
+  <symbol id="i-film" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4M3 12h18"/></symbol>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="./" aria-label="PaNIC Slide Studio">
+    <img src="assets/img/favicon.svg" alt="" width="34" height="34">
+    <span class="brand-name">PaNIC <span>Slide Studio</span></span>
+  </a>
+  <div class="topbar-meta" id="projMeta">Chưa có ảnh</div>
+  <div class="topbar-actions">
+    <button class="btn btn-ghost" id="openProject" title="Mở file dự án .json đã lưu"><svg class="ico"><use href="#i-folder"/></svg><span>Mở dự án</span></button>
+    <button class="btn btn-soft" id="saveProject" title="Lưu toàn bộ cài đặt thành file .json để dùng lại"><svg class="ico"><use href="#i-save"/></svg><span>Lưu dự án</span></button>
+  </div>
+  <button class="icon-btn" id="themeBtn" aria-label="Đổi giao diện sáng / tối"><svg class="ico"><use id="themeIco" href="#i-sun"/></svg></button>
+</header>
+
+<div class="workspace">
+  <aside class="sidebar">
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="content" aria-selected="true"><svg class="ico"><use href="#i-image"/></svg>Nội dung</button>
+      <button role="tab" data-tab="settings" aria-selected="false"><svg class="ico"><use href="#i-sliders"/></svg>Cài đặt</button>
+      <button role="tab" data-tab="effects" aria-selected="false"><svg class="ico"><use href="#i-sparkles"/></svg>Hiệu ứng</button>
+      <button role="tab" data-tab="text" aria-selected="false"><svg class="ico"><use href="#i-type"/></svg>Chữ</button>
+    </nav>
+
+    <div class="panels">
+      <!-- Nội dung -->
+      <section class="panel" data-panel="content">
+        <div class="card">
+          <div class="card-head"><h3>Ảnh</h3></div>
+          <label class="drop" for="photoInput">
+            <span class="drop-ico"><svg class="ico"><use href="#i-upload"/></svg></span>
+            <b>Kéo thả ảnh vào đây</b>
+            <small>hoặc bấm để chọn · JPG, PNG, WEBP · có thể thả cả nhạc và phụ đề</small>
+          </label>
+          <div class="stats" id="photoStats" hidden>
+            <div><b id="statPhotos">0</b><small>ảnh</small></div>
+            <div><b id="statSlides">0</b><small>slide</small></div>
+            <div><b id="statSize">0 MB</b><small>dung lượng</small></div>
+          </div>
+          <div class="card-actions" id="photoActions" hidden>
+            <button class="btn btn-soft" id="addPhotos"><svg class="ico"><use href="#i-plus"/></svg>Thêm ảnh</button>
+            <button class="btn btn-ghost danger" id="clearPhotos"><svg class="ico"><use href="#i-trash"/></svg>Xoá hết</button>
+          </div>
+          <div class="field">
+            <span class="field-label">Thứ tự ảnh</span>
+            <div class="seg">
+              <label><input type="radio" name="sort" value="name" data-opt="sort"><span>Theo tên file</span></label>
+              <label><input type="radio" name="sort" value="date" data-opt="sort"><span>Theo ngày chụp</span></label>
+            </div>
+          </div>
+          <p class="hint">Ảnh đứng cạnh nhau sẽ vào chung một slide ghép. Ảnh chỉ hiện trong khung xem trước để trang luôn mượt.</p>
+        </div>
+
+        <div class="card" id="coverCard">
+          <div class="card-head"><h3>Ảnh bìa</h3><span class="badge">slide mở đầu</span></div>
+          <div class="cover-row">
+            <div class="cover-thumb"><img id="coverImg" alt="" hidden><span id="coverEmpty"><svg class="ico"><use href="#i-image"/></svg></span></div>
+            <div class="media-text"><b id="coverName">Chưa có ảnh</b><small id="coverMeta">Thêm ảnh hoặc chọn một ảnh bìa riêng</small></div>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-soft" id="coverPick"><svg class="ico"><use href="#i-upload"/></svg>Chọn ảnh bìa</button>
+            <button class="btn btn-ghost" id="coverReset" hidden><svg class="ico"><use href="#i-undo"/></svg>Dùng ảnh đầu tiên</button>
+          </div>
+          <p class="hint">Ảnh bìa đứng cạnh tiêu đề ở slide mở đầu. Nên chọn ảnh rõ mặt, ít chi tiết thừa.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Nhạc nền</h3></div>
+          <div class="media-row">
+            <span class="media-ico"><svg class="ico"><use href="#i-music"/></svg></span>
+            <div class="media-text"><b id="musicName">Chưa có nhạc</b><small id="musicMeta"></small></div>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-soft" id="musicPick"><svg class="ico"><use href="#i-upload"/></svg>Chọn nhạc khác</button>
+            <button class="btn btn-ghost" id="musicReset" hidden><svg class="ico"><use href="#i-undo"/></svg>Mặc định</button>
+            <button class="icon-btn" id="musicClear" aria-label="Bỏ nhạc" hidden><svg class="ico"><use href="#i-x"/></svg></button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Phụ đề bài hát</h3><span class="badge">.srt · .vtt</span></div>
+          <div class="media-row">
+            <span class="media-ico"><svg class="ico"><use href="#i-captions"/></svg></span>
+            <div class="media-text"><b id="lyricsName">Chưa có phụ đề</b><small id="lyricsMeta"></small></div>
+          </div>
+          <div class="card-actions">
+            <button class="btn btn-soft" id="lyricsPick"><svg class="ico"><use href="#i-upload"/></svg>Chọn phụ đề khác</button>
+            <button class="btn btn-soft" id="lyricsEdit"><svg class="ico"><use href="#i-edit"/></svg>Sửa lời / đồng bộ</button>
+            <button class="btn btn-ghost" id="lyricsReset" hidden><svg class="ico"><use href="#i-undo"/></svg>Mặc định</button>
+            <button class="icon-btn" id="lyricsClear" aria-label="Bỏ phụ đề" hidden><svg class="ico"><use href="#i-x"/></svg></button>
+          </div>
+          <p class="hint">File .vtt tải từ YouTube có thời điểm của từng chữ nên chữ hiện đúng lúc hát.</p>
+        </div>
+      </section>
+
+      <!-- Cài đặt -->
+      <section class="panel" data-panel="settings" hidden>
+        <div class="card">
+          <div class="card-head"><h3>Chủ đề</h3></div>
+          <div class="select-wrap"><select class="select" id="styleSel" data-opt="style" aria-label="Chủ đề"></select></div>
+          <p class="hint">Đổi chủ đề sẽ đặt lại khung ảnh, bộ lọc, hiệu ứng, kiểu phụ đề và nhạc mặc định theo chủ đề đó.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Khung hình</h3></div>
+          <div class="seg">
+            <label><input type="radio" name="aspect" value="landscape" data-opt="aspect"><span><i class="ar ar-l"></i>Ngang 16:9</span></label>
+            <label><input type="radio" name="aspect" value="portrait" data-opt="aspect"><span><i class="ar ar-p"></i>Dọc 9:16</span></label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Slide</h3></div>
+          <label class="row-switch"><span><b>Xen slide ghép nhiều ảnh</b><small>2–5 ảnh trên một slide, xen kẽ với slide 1 ảnh</small></span>
+            <span class="switch"><input type="checkbox" data-opt="collage"><span></span></span></label>
+          <div class="field" id="durRow">
+            <div class="field-head"><span>Thời lượng mỗi ảnh</span><output id="durOut"></output></div>
+            <input type="range" class="range" min="3" max="8" step="0.5" data-opt="dur" aria-label="Thời lượng mỗi ảnh">
+          </div>
+          <label class="row-switch" id="fitRow" hidden><span><b>Tự khớp theo độ dài nhạc</b><small>Chia đều thời lượng để video dài bằng bài hát</small></span>
+            <span class="switch"><input type="checkbox" data-opt="fitMusic"><span></span></span></label>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Khung ảnh</h3></div>
+          <div class="frame-opts" id="frameOpts"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Bộ lọc màu</h3></div>
+          <div class="select-wrap"><select class="select" id="filterSel" data-opt="filter" aria-label="Bộ lọc màu"></select></div>
+        </div>
+      </section>
+
+      <!-- Hiệu ứng -->
+      <section class="panel" data-panel="effects" hidden>
+        <div class="card">
+          <div class="card-head"><h3>Chuyển cảnh</h3></div>
+          <div class="preset-row">
+            <button class="pill" data-trpreset="theme">Theo chủ đề</button>
+            <button class="pill" data-trpreset="calm">Nhẹ nhàng</button>
+            <button class="pill" data-trpreset="fun">Sôi động</button>
+            <button class="pill" data-trpreset="all">Tất cả</button>
+          </div>
+          <div class="divider"><span>hoặc chọn từng hiệu ứng</span></div>
+          <div class="chips" id="trList"></div>
+          <p class="hint">Các hiệu ứng được chọn sẽ lần lượt thay phiên nhau giữa các slide.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Hiệu ứng hạt</h3></div>
+          <div class="preset-row">
+            <button class="pill" data-ppreset="theme">Theo chủ đề</button>
+            <button class="pill" data-ppreset="all">Tất cả</button>
+            <button class="pill" data-ppreset="none">Tắt hết</button>
+          </div>
+          <div class="divider"><span>hoặc chọn từng loại</span></div>
+          <div class="chips" id="ptList"></div>
+          <p class="hint" id="ptOff">Đang tắt hiệu ứng hạt.</p>
+          <div class="seg">
+            <label><input type="radio" name="pmode" value="accent" data-opt="particleMode"><span>Điểm nhấn</span></label>
+            <label><input type="radio" name="pmode" value="continuous" data-opt="particleMode"><span>Liên tục</span></label>
+          </div>
+          <p class="hint">“Điểm nhấn” chỉ bắn hiệu ứng lúc mở đầu, kết thúc và mỗi lần chuyển cảnh. Chọn nhiều loại thì các loại sẽ thay phiên nhau sau mỗi 2 slide.</p>
+          <div class="field">
+            <div class="field-head"><span>Mật độ</span><output id="densityOut"></output></div>
+            <input type="range" class="range" min="0.3" max="2" step="0.1" data-opt="density" aria-label="Mật độ hiệu ứng">
+          </div>
+        </div>
+      </section>
+
+      <!-- Chữ -->
+      <section class="panel" data-panel="text" hidden>
+        <div class="card">
+          <div class="card-head"><h3>Mở đầu &amp; kết thúc</h3></div>
+          <label class="field"><span class="field-label">Tiêu đề</span><input class="input" type="text" data-opt="title" placeholder="VD: Phú &amp; Thanh"></label>
+          <label class="field"><span class="field-label">Dòng phụ</span><input class="input" type="text" data-opt="sub" placeholder="VD: LỄ THÀNH HÔN · 16.06.2024"></label>
+          <label class="field"><span class="field-label">Lời kết</span><input class="input" type="text" data-opt="end" placeholder="VD: Trăm năm hạnh phúc"></label>
+        </div>
+
+        <div class="card" id="capCard">
+          <div class="card-head"><h3>Chữ trang trí trên slide ghép</h3></div>
+          <label class="row-switch"><span><b>Hiển thị chữ trang trí</b><small>Câu như “JUST married”, “Make a wish”. Tắt thì ảnh được kéo dài xuống.</small></span>
+            <span class="switch"><input type="checkbox" data-opt="showCaptions"><span></span></span></label>
+          <ul class="cap-list" id="capList"></ul>
+          <form class="cap-form" id="capForm">
+            <input class="input" id="capTop" type="text" placeholder="Dòng nhỏ (tuỳ chọn)" maxlength="24">
+            <input class="input" id="capMain" type="text" placeholder="Dòng chính" maxlength="28">
+            <button class="btn btn-soft" type="submit"><svg class="ico"><use href="#i-plus"/></svg>Thêm câu</button>
+          </form>
+          <button class="link-btn" id="capReset" type="button">Khôi phục danh sách mặc định của chủ đề</button>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Kiểu phụ đề bài hát</h3></div>
+          <div class="seg seg-4">
+            <label><input type="radio" name="lmode" value="sticker" data-opt="lyricMode"><span>Sticker</span></label>
+            <label><input type="radio" name="lmode" value="karaoke" data-opt="lyricMode"><span>Karaoke</span></label>
+            <label><input type="radio" name="lmode" value="elegant" data-opt="lyricMode"><span>Thanh lịch</span></label>
+            <label><input type="radio" name="lmode" value="off" data-opt="lyricMode"><span>Tắt</span></label>
+          </div>
+          <div class="field">
+            <span class="field-label">Vị trí</span>
+            <div class="seg">
+              <label><input type="radio" name="lpos" value="free" data-opt="lyricPos"><span>Linh hoạt</span></label>
+              <label><input type="radio" name="lpos" value="bottom" data-opt="lyricPos"><span>Dưới cùng</span></label>
+            </div>
+            <small class="hint">“Linh hoạt” đặt câu hát ở nhiều chỗ, chữ to nổi bật. “Dưới cùng” gom mỗi câu thành một dòng trên dải mờ ở đáy video để không che ảnh.</small>
+          </div>
+        </div>
+      </section>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div class="screen" id="screen">
+      <canvas id="c" width="1920" height="1080"></canvas>
+      <button class="fs-exit" id="fsExit" type="button" aria-label="Thoát toàn màn hình" hidden><svg class="ico"><use href="#i-x"/></svg></button>
+      <div class="empty" id="empty">
+        <div class="empty-ico"><svg class="ico"><use href="#i-film"/></svg></div>
+        <b>Bắt đầu bằng vài tấm ảnh</b>
+        <span>Kéo thả ảnh vào bất kỳ đâu trên trang, hoặc dùng tab Nội dung.</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer class="transport">
+  <div class="tp-group">
+    <button class="play-btn" id="playBtn" aria-label="Phát"><svg class="ico"><use id="playIco" href="#i-play"/></svg></button>
+    <button class="icon-btn" id="restartBtn" aria-label="Phát lại từ đầu"><svg class="ico"><use href="#i-restart"/></svg></button>
+  </div>
+  <div class="tp-time">
+    <span id="timeNow">0:00</span>
+    <div class="track" id="track" role="slider" tabindex="0" aria-label="Vị trí phát"><div class="track-fill" id="fill"></div></div>
+    <span id="timeTotal">0:00</span>
+  </div>
+  <div class="tp-group">
+    <span class="slide-ind" id="slideInd"></span>
+    <button class="icon-btn" id="fsBtn" aria-label="Toàn màn hình"><svg class="ico"><use href="#i-max"/></svg></button>
+    <button class="btn btn-primary" id="exportBtn"><svg class="ico"><use href="#i-download"/></svg>Xuất video</button>
+    <button class="btn btn-danger" id="cancelRec"><svg class="ico"><use href="#i-stop"/></svg>Huỷ ghi</button>
+  </div>
+</footer>
+
+<dialog class="dialog" id="lyricsDlg" aria-labelledby="lyricsDlgTitle">
+  <form method="dialog" class="dlg-head">
+    <h3 id="lyricsDlgTitle">Sửa lời &amp; đồng bộ phụ đề</h3>
+    <button class="icon-btn" value="close" aria-label="Đóng"><svg class="ico"><use href="#i-x"/></svg></button>
+  </form>
+  <p class="hint">Mỗi dòng là một câu sẽ hiện trên video. Sửa chính tả, thêm chữ còn thiếu, ngắt dòng đúng câu hát. Sau đó chọn một trong hai cách đồng bộ:</p>
+  <textarea class="input textarea" id="lyricsText" rows="12" spellcheck="false" placeholder="Dán lời bài hát vào đây, mỗi câu một dòng"></textarea>
+  <div class="dlg-grid">
+    <div class="dlg-opt">
+      <b>Căn theo thời gian cũ</b>
+      <small>Dùng khi đã có phụ đề (kể cả phụ đề tự động sai chính tả). Mỗi chữ đã sửa nhận thời điểm của chữ gần giống nhất.</small>
+      <button class="btn btn-soft" id="alignBtn"><svg class="ico"><use href="#i-captions"/></svg>Căn lại thời gian</button>
+    </div>
+    <div class="dlg-opt">
+      <b>Gõ nhịp theo nhạc</b>
+      <small>Dùng khi chưa có phụ đề. Nhạc sẽ phát, bạn bấm nút (hoặc Space) đúng lúc bắt đầu hát mỗi dòng.</small>
+      <button class="btn btn-soft" id="tapBtn"><svg class="ico"><use href="#i-music"/></svg>Bắt đầu gõ nhịp</button>
+    </div>
+  </div>
+  <div class="tap" id="tapPanel" hidden>
+    <span class="tap-prog" id="tapProg"></span>
+    <b id="tapLine"></b>
+    <small id="tapNextLine"></small>
+    <div class="tap-row"><button class="btn btn-primary" id="tapNext">Dòng này bắt đầu</button><button class="btn btn-ghost" id="tapStop">Dừng</button></div>
+  </div>
+  <div class="dlg-foot">
+    <span class="hint">Tải file về và lưu vào <code>media/&lt;chủ đề&gt;/lyrics.vtt</code> để lần sau tự nạp.</span>
+    <button class="btn btn-primary" id="vttDownload"><svg class="ico"><use href="#i-download"/></svg>Tải file .vtt</button>
+  </div>
+</dialog>
+
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<input type="file" id="photoInput" accept="image/*" multiple hidden>
+<input type="file" id="musicInput" accept="audio/*" hidden>
+<input type="file" id="lyricsInput" accept=".srt,.vtt" hidden>
+<input type="file" id="coverInput" accept="image/*" hidden>
+<input type="file" id="projectInput" accept=".json,application/json" hidden>
+
+<script src="assets/js/config.js?v=8"></script>
+<script src="assets/js/lyrics.js?v=8"></script>
+<script src="assets/js/renderer.js?v=8"></script>
+<script src="assets/js/overlay.js?v=8"></script>
+<script src="assets/js/app.js?v=9"></script>
+</body>
+</html>
