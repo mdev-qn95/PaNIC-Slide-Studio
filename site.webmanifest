@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "PaNIC Slide Studio",
+  "short_name": "PaNIC Slide",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#efefe9",
+  "theme_color": "#efefe9",
+  "icons": [
+    {
+      "src": "./assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
